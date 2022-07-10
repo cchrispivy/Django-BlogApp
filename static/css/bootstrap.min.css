@@ -8268,3 +8268,12 @@ a.text-dark:hover {
 .debug {
 	border: 2px solid red;
 }
+
+.text-color-light {
+	color: white !important;
+}
+
+
+
+
+
