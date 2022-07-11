@@ -8273,7 +8273,44 @@ a.text-dark:hover {
 	color: white !important;
 }
 
+.post-border {
+	border: 1px solid silver !important;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+}
 
 
+#posts-right-content {
+
+}
+
+#posts-left-resize {
+	width: 300px;
+}
+
+#posts-left-img-resize {
+	width: 300px;
+	object-fit: cover;
+}
+
+@media screen and (max-width: 1020px) {
+	#posts-right-menu {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	#posts-collapse {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#posts-left-resize {
+		width: auto;
+	}
+
+	#posts-left-img-resize {
+		width: 100%;
+	}
+}
 
 
