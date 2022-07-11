@@ -1,0 +1,204 @@
+{% extends 'app/base.html' %} {% load static %} {% block content %}
+<div class="container-fluid">
+	<!-- ============================================================== -->
+	<!-- Banner -->
+	<!-- ============================================================== -->
+	<div
+		class="row"
+		style="
+			background-image: url(https://user-images.githubusercontent.com/108819425/178003467-34d5a3b3-64e9-4018-b9ac-e145b0c278f5.jpg);
+			background-position: 10%;
+			background-size: cover;
+			background-blend-mode: darken;
+			height: 250px;
+			display: flex;
+			align-items: center;
+		"
+	>
+		<div class="container" style="color: white">
+			<h1>Volutpat blandit aliquam etiam erat.</h1>
+			<h4>
+				Orci nulla pellentesque dignissim enim sit. Leo a diam sollicitudin
+				tempor.
+			</h4>
+			<div class="">
+				<a
+					href="#"
+					class="btn active"
+					style="border-radius: 20px; background-color: #141619; color: white"
+					role="button"
+					aria-pressed="true"
+					>Discover</a
+				>
+			</div>
+		</div>
+	</div>
+	<!-- ============================================================== -->
+	<!-- Articles -->
+	<!-- ============================================================== -->
+	<div class="container" style="flex: 3">
+		<!-- Left Menu -->
+		<div class="d-flex p-t-30">
+			<div class="p-20">
+				<!-- Article Navigation --!>
+			<div
+				class="d-flex flex-row justify-content-between"
+		style="align-items: baseline; border-bottom: 1px solid silver"
+	>
+	<h4 style="padding-right: 50px">Don't Miss</h4>
+	<div>
+	<a href="/#" style="padding: 20px">Destinations</a>
+	<a href="/#" style="padding: 20px">Travel Tips</a>
+	<a href="/#" style="padding: 20px">Resources</a>
+	<a href="/#" style="padding: 20px">More <i class="fa fa-caret-down"></i
+	></a>
+	</div>
+	</div>
+	<div id="posts-collapse" class="d-flex p-t-10 justify-content-between">
+	<div id="posts-left-resize" class="post-border">
+	<img id="posts-left-img-resize"
+			src="https://user-images.githubusercontent.com/108819425/178132228-cfd33b01-36b9-4128-9ad0-f50cf3290b71.jpg"
+	 />
+	 <div class="p-20" style="overflow: hidden; text-overflow: ellipsis">
+	 <h4>
+	 Leo vel fringilla est ullamcorper eget nulla facilisi etiam.
+	 </h4>
+	 <p id="posts-left-featured-description"
+					>
+					Nunc sed blandit libero volutpat sed cras. Quam lacus suspendisse
+					faucibus interdum posuere lorem. Consectetur adipiscing elit duis
+					tristique sollicitudin. Enim sed faucibus turpis in. Vitae sapien
+					pellentesque habitant morbi tristique senectus et netus et.
+					</p>
+	<p style="color: silver; font-size: 12px;">John Doe on Sep 29, 2022 at 9:48 am</p>
+					</div>
+					</div>
+					<div style="width: 10px;"></div>
+					<div class="d-flex flex-column justify-content-between">
+					<div class="d-flex flex-row post-border">
+					<img
+					src="https://user-images.githubusercontent.com/108819425/178132228-cfd33b01-36b9-4128-9ad0-f50cf3290b71.jpg"
+		 style="width: 100px; object-fit: cover"
+	 />
+	 <div class="p-l-20 p-r-10 p-t-10 p-b-10" style="text-overflow: ellipsis">
+	 <h6>
+	 Leo vel fringilla est ullamcorper eget nulla facilisi etiam.
+	 </h6>
+	<p style="color: silver; font-size: 12px;">John Doe on Sep 29, 2022 at 9:48 am</p>
+	 </div>
+	 </div>
+	 <div class="d-flex flex-row post-border">
+	 <img
+			 src="https://user-images.githubusercontent.com/108819425/178132228-cfd33b01-36b9-4128-9ad0-f50cf3290b71.jpg"
+		style="width: 100px; object-fit: cover"
+	/>
+	<div class="p-l-20 p-r-10 p-t-10 p-b-10" style="text-overflow: ellipsis">
+	<h6>
+	Leo vel fringilla est ullamcorper eget nulla facilisi etiam.
+	</h6>
+	<p style="color: silver; font-size: 12px;">John Doe on Sep 29, 2022 at 9:48 am</p>
+	</div>
+	</div>
+
+	<div class="d-flex flex-row post-border">
+	<img
+			src="https://user-images.githubusercontent.com/108819425/178132228-cfd33b01-36b9-4128-9ad0-f50cf3290b71.jpg"
+	 style="width: 100px; object-fit: cover"
+	/>
+	<div class="p-l-20 p-r-10 p-t-10 p-b-10" style="text-overflow: ellipsis">
+	<h6>
+	Leo vel fringilla est ullamcorper eget nulla facilisi etiam.
+	</h6>
+	<p style="color: silver; font-size: 12px;">John Doe on Sep 29, 2022 at 9:48 am</p>
+	</div>
+	</div>
+
+	<div class="d-flex flex-row post-border">
+	<img
+			src="https://user-images.githubusercontent.com/108819425/178132228-cfd33b01-36b9-4128-9ad0-f50cf3290b71.jpg"
+	 style="width: 100px; object-fit: cover"
+	/>
+	<div class="p-l-20 p-r-10 p-t-10 p-b-10" style="text-overflow: ellipsis">
+	<h6>
+	Leo vel fringilla est ullamcorper eget nulla facilisi etiam.
+	</h6>
+	<p style="color: silver; font-size: 12px;">John Doe on Sep 29, 2022 at 9:48 am</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<!-- Right Menu --!>
+	 <div id="posts-right-menu" class="p-10" style="flex: 2;">
+	 <div class="p-20" style="border-left: 1px solid silver; border-bottom: 1px solid silver;">
+	 <h4>About Blog App</h4>
+	 </div>
+	 <div class="p-20" style="border-left: 1px solid silver; border-bottom: 1px solid silver;">
+	 <p>Quisque sit amet sagittis lacus. Aenean vel venenatis mauris, ultrices placerat ipsum. Pellentesque tincidunt dolor nisl, sit amet malesuada est mollis laoreet. Aenean interdum nisl ac tempor dapibus. Nam at eros mauris. Nunc sit amet enim eros.</p>
+	 </div>
+
+	 <div class="d-flex flex-column justify-content-between p-20" style="border-left: 1px solid silver; border-bottom: 1px solid silver;" >
+	 <h4>Top Stories</h4>
+	 </div>
+
+	 <div class="d-flex flex-column justify-content-between p-t-20 p-l-10 p-b-20" style="border-left: 1px solid silver; border-bottom: 1px solid silver;" >
+	 <div class="d-flex flex-row post-border">
+	 <img
+			 src="https://user-images.githubusercontent.com/108819425/178132228-cfd33b01-36b9-4128-9ad0-f50cf3290b71.jpg"
+		style="width: 70px; object-fit: cover"
+	/>
+	<div class="p-l-20 p-r-10 p-t-10 p-b-10" style="text-overflow: ellipsis">
+	<h6>
+	Leo vel fringilla est ullamcorper eget nulla facilisi etiam.
+	</h6>
+	</div>
+	</div>
+	<div class="d-flex flex-row post-border">
+	<img
+			src="https://user-images.githubusercontent.com/108819425/178132228-cfd33b01-36b9-4128-9ad0-f50cf3290b71.jpg"
+	 style="width: 70px; object-fit: cover"
+	/>
+	<div class="p-l-20 p-r-10 p-t-10 p-b-10" style="text-overflow: ellipsis">
+	<h6>
+	Leo vel fringilla est ullamcorper eget nulla facilisi etiam.
+	</h6>
+	</div>
+	</div>
+	<div class="d-flex flex-row post-border">
+	<img
+			src="https://user-images.githubusercontent.com/108819425/178132228-cfd33b01-36b9-4128-9ad0-f50cf3290b71.jpg"
+	 style="width: 70px; object-fit: cover"
+	/>
+	<div class="p-l-20 p-r-10 p-t-10 p-b-10" style="text-overflow: ellipsis">
+	<h6>
+	Leo vel fringilla est ullamcorper eget nulla facilisi etiam.
+	</h6>
+	</div>
+	</div>
+	<div class="d-flex flex-row post-border">
+	<img
+			src="https://user-images.githubusercontent.com/108819425/178132228-cfd33b01-36b9-4128-9ad0-f50cf3290b71.jpg"
+	 style="width: 70px; object-fit: cover"
+	/>
+	<div class="p-l-20 p-r-10 p-t-10 p-b-10" style="text-overflow: ellipsis">
+	<h6>
+	Leo vel fringilla est ullamcorper eget nulla facilisi etiam.
+	</h6>
+	</div>
+	</div>
+
+	</div>
+
+	</div>
+	</div>
+	</div>
+	</div>
+	<!-- endposts --!>
+
+	 <!-- ============================================================== -->
+			</div>
+
+			{% endblock content %}
+		</div>
+	</div>
+</div>
