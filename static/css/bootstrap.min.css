@@ -8248,7 +8248,41 @@ a.text-dark:hover {
 }
 /*# sourceMappingURL=bootstrap.min.css.map */
 
-/* custom css */
+/* ----- CUSTOM ----- */
+
+/* ------------------- */
+/* Anchor tag override */
+/* ------------------- */
+
+
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+
+#banner-btn:hover {
+	background-color:  #333333 !important;
+  transition: 0.3s;
+}
+
+#post-nav {
+	color: grey;
+}
+
+#post-nav:hover {
+	color: black;
+  transition: 0.6s;
+}
+
+#post-container a a:focus, a:visited, a:active {
+	color: black;
+	text-decoration: none;
+}
+
+#post-container:hover {
+	color: black;
+	background-color: #f2f2f2;
+  transition: 0.3s;
+}
 
 .custom-bg-dark {
 	background-color: #141619;
@@ -8263,6 +8297,10 @@ a.text-dark:hover {
 .custom-header-layout {
 	display: flex;
 	align-items: center;
+}
+
+#mobile-header-spacing {
+	width: 70%;
 }
 
 .debug {
@@ -8300,10 +8338,41 @@ a.text-dark:hover {
 	overflow: hidden;
 }
 
+
+#posts-right-featured-description {
+	display: -webkit-box;
+	max-width: 200px;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+
+
+
+
+
+
+
+/* ------------- */
+/* MEDIA QUERIES */
+/* ------------- */
+
 @media screen and (max-width: 1020px) {
 	#posts-right-menu {
 		display: none;
 	}
+	
+	#mobile-header-spacing {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	#mobile-header-spacing {
+		width: 80%;
+	}
+
 }
 
 @media screen and (max-width: 760px) {
@@ -8323,6 +8392,22 @@ a.text-dark:hover {
 	#posts-left-featured-description {
 		max-width: none;
 	}
+
+	#mobile-header-spacing {
+		width: 70%;
+	}
 }
+
+@media screen and (max-width: 600px) {
+	#mobile-header-spacing {
+		width: 40%;
+		margin: 0 auto;
+	}
+
+	#mobile-logo {
+		padding-left: 15px;
+	}
+}
+
 
 
