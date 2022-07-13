@@ -36,8 +36,11 @@
 	<!-- Articles -->
 	<!-- ============================================================== -->
 	<div class="container" style="flex: 3">
+		{% if messages %} {% for message in messages %}
+		<div class="alert alert-{{ message.tags }} m-t-20">{{ message }}</div>
+		{% endfor %} {% endif %}
 		<!-- Left Menu -->
-		<div class="d-flex p-t-30">
+		<div class="d-flex p-t-20">
 			<div class="p-20">
 				<!-- Article Navigation -->
 				<div
