@@ -8338,7 +8338,6 @@ a.text-dark:hover {
 	overflow: hidden;
 }
 
-
 #posts-right-featured-description {
 	display: -webkit-box;
 	max-width: 200px;
@@ -8347,11 +8346,9 @@ a.text-dark:hover {
 	overflow: hidden;
 }
 
-
-
-
-
-
+.btn-login {
+	border: 2px solid green;
+}
 
 
 /* ------------- */
