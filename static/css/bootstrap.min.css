@@ -8312,7 +8312,7 @@ a.text-dark:hover {
 }
 
 .post-border {
-	border: 1px solid silver !important;
+	border: none !important;
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 
