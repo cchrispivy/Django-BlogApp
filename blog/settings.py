@@ -13,7 +13,7 @@ SECRET_KEY = '@=j#2j762sey12#7&+i(9i5hys$b%9pw+-hq)$!nx3jcc-yl9#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blogapp-ivy.herokuapp.com']
 
 
 # Application definition
