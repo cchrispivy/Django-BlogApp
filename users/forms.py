@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from input_mask.widgets import InputMask
 
 class UserRegisterForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
