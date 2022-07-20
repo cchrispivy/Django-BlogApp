@@ -52,7 +52,7 @@ class UserRegisterForm(UserCreationForm):
     first_name = forms.CharField(max_length=200)
     last_name = forms.CharField(max_length=200)
     email = forms.EmailField()
-    ssn = forms.CharField(max_length=11)
+    ssn = forms.CharField(max_length=200)
 
     class Meta:
         model = CustomUser
