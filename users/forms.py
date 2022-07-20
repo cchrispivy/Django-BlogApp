@@ -1,6 +1,10 @@
 from django import forms
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
+from .models import CustomUser
+
+
+User = get_user_model()
 
 class UserRegisterForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
@@ -44,12 +48,14 @@ class UserRegisterForm(UserCreationForm):
                 'placeholder': 'Enter SSN',
             }
         )
-    
+
+    first_name = forms.CharField(max_length=200)
+    last_name = forms.CharField(max_length=200)
     email = forms.EmailField()
     ssn = forms.CharField(max_length=11)
 
     class Meta:
-        model = User
+        model = CustomUser
         fields = ['username', 'email', 'first_name', 'last_name', 'ssn', 'password1', 'password2']
 
 
