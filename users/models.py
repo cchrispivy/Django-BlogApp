@@ -1,21 +1,17 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
-from django_cryptography.fields import encrypt
-#from hashids import Hashids
+from django.core.signing import Signer
+
+signer = Signer()
 
 class CustomUser(AbstractUser):
-
     username = models.CharField(max_length = 200, unique=True)
     email = models.EmailField()
     first_name = models.CharField(max_length = 200)
     last_name = models.CharField(max_length = 200)
     ssn = models.CharField(max_length = 200)
-
-
-    def encrypt_string():
-        pass
-
+    #ssn = signer.sign(models.CharField(max_length = 200))
 
     def __str__(self):
         return self.username
