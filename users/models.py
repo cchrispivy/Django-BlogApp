@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import pre_save, post_save
 from django.dispatch import receiver
+from PIL import Image
+import numpy as np
 
 class CustomUser(AbstractUser):
     username = models.CharField(max_length = 200, unique=True)
@@ -22,3 +24,15 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
+    def save(self, *args, **kwargs):
+        super(Profile, self).save(*args, **kwargs)
+
+        img = Image.open(self.image.path)
+        sqrWidth = np.ceil(np.sqrt(img.size[0]*img.size[1])).astype(int)
+        img = img.resize((sqrWidth, sqrWidth))
+        img.save(self.image.path)
+
+        #if img.height > 300 or img.width > 300:
+        #    output_size = (300,300)
+        #    img.thumbnail(output_size)
+        #    img.save(self.image.path)
