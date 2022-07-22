@@ -12,7 +12,7 @@ class CustomUser(AbstractUser):
     first_name = models.CharField(max_length = 200)
     last_name = models.CharField(max_length = 200)
     ssn = models.CharField(max_length = 200)
-    last_four_ssn = models.CharField(max_length = 11)
+    last_four_ssn = models.CharField(max_length = 200)
 
     def __str__(self):
         return self.username
@@ -23,8 +23,9 @@ def encrypt_ssn_receiver(sender, instance, created, *args, **kwargs):
         token = bytes(instance.ssn, 'utf-8')
         encoded = encrypt(token)
         instance.last_four_ssn = '***-**-%s' % instance.ssn[-4:]
+        print(instance.last_four_ssn)
         instance.ssn = encoded.decode('utf-8')
-        instance.save(update_fields=['ssn'])
+        instance.save(update_fields=['ssn', 'last_four_ssn'])
 
 
 class Profile(models.Model):
