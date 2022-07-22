@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User, Permission
 from django import forms
+from cryptography.fernet import Fernet
 from .models import Profile, CustomUser
-from .crypt_util import Crypt
 
 class CustomUserForm(forms.ModelForm):
     class Meta:
@@ -16,17 +16,16 @@ class CustomUserAdmin(UserAdmin):
     change_form_template = 'change_form.html'
 
     fieldsets = UserAdmin.fieldsets + (
-            (None, {'fields': ('decrypted_ssn',)}),
+            (None, {'fields': ('decrypted_ssn','ssn')}),
     )
 
     readonly_fields = ('decrypted_ssn', )
 
     def decrypted_ssn(self, instance):
-        c = Crypt()
+        cipher = Fernet('81HqDtbqAywKSOumSha3BhWNOdQ26slT6K0YaZeZyPs=')
         token = instance.ssn
-        decrypted = c.decrypt_token(token.encode('utf-8'))
-        return decrypted.decode('utf-8')
-    decrypted_ssn.short_description = "SSN"
+        #return cipher.decrypt(token)
+        return type(token)
 
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Profile)

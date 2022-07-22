@@ -4,9 +4,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import pre_save, post_save
 from django.dispatch import receiver
 from cryptography.fernet import Fernet
-
-key = Fernet.generate_key()
-cipher_suite = Fernet(key)
+from .crypt_util import Crypt
 
 class CustomUser(AbstractUser):
     username = models.CharField(max_length = 200, unique=True)
@@ -21,8 +19,10 @@ class CustomUser(AbstractUser):
 @receiver(post_save, sender=CustomUser)
 def encrypt_ssn_receiver(sender, instance, created, *args, **kwargs):
     if created:
-        encoded_ssn = bytes(instance.ssn, 'utf-8')
-        instance.ssn = cipher_suite.encrypt(encoded_ssn)
+        c = Crypt()
+        token = bytes(instance.ssn, 'utf-8')
+        encoded_token = c.encrypt_token(token)
+        instance.ssn = encoded_token.decode('utf-8')
         instance.save(update_fields=['ssn'])
 
 
