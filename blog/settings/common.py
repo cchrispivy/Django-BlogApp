@@ -2,6 +2,7 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR_2 = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '@=j#2j762sey12#7&+i(9i5hys$b%9pw+-hq)$!nx3jcc-yl9#'
@@ -113,8 +114,8 @@ STATICFILES_DIRS=(
         os.path.join(BASE_DIR, 'static'),        
 )
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR_2, 'media')
+MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
