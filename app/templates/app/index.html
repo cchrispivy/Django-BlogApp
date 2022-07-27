@@ -42,6 +42,46 @@
 		<!-- Left Menu -->
 		<div class="d-flex p-t-20">
 			<div class="p-20">
+				<div class="col-lg p-t-10">
+					<h4 class="p-r-60">Recent Posts</h4>
+					{% for post in posts %}
+					<a class="p-5 post-container" style="color: black;" href="{% url 'post-detail' post.id %}">
+						<div class="d-flex flex-row post-border p-10">
+							<img
+								class="rounded-circle m-r-20"
+								style="width: 80px; object-fit: cover; height: 80px;"
+								src="{{ post.author.profile.image.url }}"
+							/>
+							<div>
+								<div class="d-flex align-items-baseline">
+									<p class="m-r-10">{{ post.author }}</p>
+									<small class="text-muted"
+										>{{ post.date_posted|date:"F d, Y" }}</small
+									>
+								</div>
+									<h4
+										href="{% url 'post-detail' post.id %}"
+									>
+										{{ post.title }}
+									</h4>
+								<p
+									style="
+										display: -webkit-box;
+										-webkit-line-clamp: 2;
+										-webkit-box-orient: vertical;
+										overflow: hidden;
+										text-overflow: ellipsis;
+									"
+								>
+									{{ post.content }}
+								</p>
+							</div>
+						</div>
+					</a>
+					{% endfor %}
+				</div>
+				<br />
+				<br />
 				<!-- Article Navigation -->
 				<div
 					class="d-flex flex-row justify-content-between"
@@ -56,7 +96,7 @@
 					</div>
 				</div>
 				<div id="posts-collapse" class="d-flex p-t-10 justify-content-between">
-					<a id="post-container" href="/#">
+					<a class="post-container" style="color: black;" href="/#">
 						<div id="posts-left-resize" class="post-border">
 							<img
 								id="posts-left-img-resize"
@@ -85,7 +125,7 @@
 					<div style="width: 10px"></div>
 					<div class="d-flex flex-column justify-content-between">
 						{% for post in posts %}
-						<a id="post-container" href="/#">
+						<a class="post-container" style="color: black;" href="/#">
 							<div class="d-flex flex-row post-border" style="height: 100px">
 								{% if post.image %}
 								<img
@@ -155,10 +195,10 @@
 						p-t-20 p-l-10 p-b-20
 						h-200
 					"
-					style="border-left: 1px solid silver; border-bottom: 1px solid silver"
+					style="border-left: 1px solid silver"
 				>
 					{% for x in iterator %}
-					<a id="post-container" href="/#">
+					<a class="post-container" style="color: black;" href="/#">
 						<div class="d-flex flex-row post-border">
 							<img
 								src="https://user-images.githubusercontent.com/108819425/178132228-cfd33b01-36b9-4128-9ad0-f50cf3290b71.jpg"

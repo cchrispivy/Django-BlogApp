@@ -6607,6 +6607,7 @@ button.bg-dark:hover {
 		align-self: stretch !important;
 	}
 }
+
 .float-left {
 	float: left !important;
 }
@@ -6649,6 +6650,7 @@ button.bg-dark:hover {
 		float: none !important;
 	}
 }
+
 @media (min-width: 1200px) {
 	.float-xl-left {
 		float: left !important;
@@ -8273,13 +8275,16 @@ a.text-dark:hover {
   transition: 0.6s;
 }
 
-#post-container a a:focus, a:visited, a:active {
+.custom-nav-dark :hover {
+	color: silver !important;
+}
+
+.post-container a a:focus, a:visited, a:active {
 	color: black;
 	text-decoration: none;
 }
 
-#post-container:hover {
-	color: black;
+.post-container :hover {
 	background-color: #f2f2f2;
   transition: 0.3s;
 }
@@ -8316,9 +8321,8 @@ a.text-dark:hover {
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 
-
-#posts-right-content {
-
+#author-link a a:visited {
+	color: yellow;
 }
 
 #posts-left-resize {
@@ -8333,14 +8337,6 @@ a.text-dark:hover {
 #posts-left-featured-description {
 	display: -webkit-box;
 	max-width: 300px;
-	-webkit-line-clamp: 4;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-}
-
-#posts-right-featured-description {
-	display: -webkit-box;
-	max-width: 200px;
 	-webkit-line-clamp: 4;
 	-webkit-box-orient: vertical;
 	overflow: hidden;

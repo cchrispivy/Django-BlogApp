@@ -42,11 +42,12 @@
 			<!-- ============================================================== -->
 			<!-- Right side toggle and nav items -->
 			<!-- ============================================================== -->
-			<ul class="navbar-nav float-right">
+			<ul class="navbar-nav align-items-center float-right">
 				<!-- Search -->
 				<li class="nav-item search-box">
 					<a
 						class="nav-link waves-effect waves-dark"
+						title="Search"
 						style="pointer-events: none"
 						href="javascript:void(0)"
 						><i class="ti-search custom-bg-dark"></i>
@@ -61,17 +62,22 @@
 					</form>
 				</li>
 				{% if user.is_authenticated %}
+				<!-- Create Post -->
+				<li class="nav-item">
+					<a class="nav-link" title="Create Post" href="{% url 'post-create' %}"><i class="font-18 ti-plus custom-bg-dark"></i></a>
+				</li>
 				<!-- Notifications -->
 				<li class="nav-item dropdown">
 					<a
 						class="nav-link dropdown-toggle waves-effect waves-dark"
+						title="Notifications"
 						href=""
 						id="2"
 						data-toggle="dropdown"
 						aria-haspopup="true"
 						aria-expanded="false"
 					>
-						<i class="font-24 mdi mdi-comment-processing custom-bg-dark"></i>
+						<i class="font-18 ti-bell custom-bg-dark"></i>
 					</a>
 					<div
 						class="
@@ -181,12 +187,12 @@
 
 				{% else %}
 				<li class="nav-item">
-					<a class="nav-link" style="color: grey" href="{% url 'login' %}">
+					<a class="nav-link custom-nav-dark" style="color: grey" href="{% url 'login' %}">
 						<p>Login</p>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" style="color: grey" href="{% url 'register' %}">
+					<a class="nav-link custom-nav-dark" style="color: grey" href="{% url 'register' %}">
 						<p>Register</p>
 					</a>
 				</li>

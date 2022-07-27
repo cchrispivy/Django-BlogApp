@@ -1,0 +1,25 @@
+{% extends "app/base.html" %} {% load crispy_forms_tags %} {% block content %}
+<div class="container content-section p-t-20">
+	<form method="POST">
+		{% csrf_token %}
+		<fieldset class="form-group">
+			{% if request.resolver_match.url_name == 'post-create' %}
+			<legend class="border-bottom mb-4">Create Blog Post</legend>
+			{% else %}
+			<legend class="border-bottom mb-4">Update Blog Post</legend>
+			{% endif %}
+			{{ form|crispy }}
+		</fieldset>
+		<div class="form-group">
+			<button class="btn btn-outline-info" type="submit" value="Submit">
+				{% if request.resolver_match.url_name == 'post-create' %}
+				Post
+				{% else %}
+				Update Post
+				{% endif %}
+			</button>
+		</div>
+	</form>
+</div>
+{% endblock content %}
+
