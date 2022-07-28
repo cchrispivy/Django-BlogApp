@@ -43,13 +43,41 @@
 		<div class="d-flex p-t-20">
 			<div class="p-20">
 				<div class="col-lg p-t-10">
+					<div class="d-flex justify-content-between">
 					<h4 class="p-r-60">Recent Posts</h4>
+					<div>
+					    {% if is_paginated %}
+      {% if page_obj.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+
+    {% endif %}
+					</div>
+					</div>
 					{% for post in posts %}
-					<a class="p-5 post-container" style="color: black;" href="{% url 'post-detail' post.id %}">
+					<a
+						class="p-5 post-container"
+						style="color: black"
+						href="{% url 'post-detail' post.id %}"
+					>
 						<div class="d-flex flex-row post-border p-10">
 							<img
 								class="rounded-circle m-r-20"
-								style="width: 80px; object-fit: cover; height: 80px;"
+								style="width: 80px; object-fit: cover; height: 80px"
 								src="{{ post.author.profile.image.url }}"
 							/>
 							<div>
@@ -59,11 +87,7 @@
 										>{{ post.date_posted|date:"F d, Y" }}</small
 									>
 								</div>
-									<h4
-										href="{% url 'post-detail' post.id %}"
-									>
-										{{ post.title }}
-									</h4>
+								<h4 href="{% url 'post-detail' post.id %}">{{ post.title }}</h4>
 								<p
 									style="
 										display: -webkit-box;
@@ -96,7 +120,7 @@
 					</div>
 				</div>
 				<div id="posts-collapse" class="d-flex p-t-10 justify-content-between">
-					<a class="post-container" style="color: black;" href="/#">
+					<a class="post-container" style="color: black" href="/#">
 						<div id="posts-left-resize" class="post-border">
 							<img
 								id="posts-left-img-resize"
@@ -125,7 +149,7 @@
 					<div style="width: 10px"></div>
 					<div class="d-flex flex-column justify-content-between">
 						{% for post in posts %}
-						<a class="post-container" style="color: black;" href="/#">
+						<a class="post-container" style="color: black" href="/#">
 							<div class="d-flex flex-row post-border" style="height: 100px">
 								{% if post.image %}
 								<img
@@ -198,7 +222,7 @@
 					style="border-left: 1px solid silver"
 				>
 					{% for x in iterator %}
-					<a class="post-container" style="color: black;" href="/#">
+					<a class="post-container" style="color: black" href="/#">
 						<div class="d-flex flex-row post-border">
 							<img
 								src="https://user-images.githubusercontent.com/108819425/178132228-cfd33b01-36b9-4128-9ad0-f50cf3290b71.jpg"
