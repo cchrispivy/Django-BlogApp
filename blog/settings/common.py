@@ -7,7 +7,6 @@ BASE_DIR_2 = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__f
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '@=j#2j762sey12#7&+i(9i5hys$b%9pw+-hq)$!nx3jcc-yl9#'
 
-
 ALLOWED_HOSTS = ['*']
 
 DEBUG = True
@@ -56,16 +55,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blogapp_db',
-        'USER': 'blogapp_admin',
-        'PASSWORD': 'test123',
+        'NAME': 'blogapp',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
         'PORT': '5432',
     }

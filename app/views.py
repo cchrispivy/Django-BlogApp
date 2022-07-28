@@ -9,6 +9,8 @@ from django.views.generic import (
     DeleteView
 )
 from .models import Post
+from users.models import CustomUser
+
 
 def index(request):
     context = {
@@ -33,7 +35,7 @@ class UserPostListView(ListView):
     paginate_by = 5
 
     def get_queryset(self):
-        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        user = get_object_or_404(CustomUser, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
 
 
