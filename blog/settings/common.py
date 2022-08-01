@@ -8,8 +8,6 @@ BASE_DIR_2 = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__f
 
 SECRET_KEY = '@=j#2j762sey12#7&+i(9i5hys$b%9pw+-hq)$!nx3jcc-yl9#'
 
-DEBUG = False
-
 # Application definition
 
 INSTALLED_APPS = [
