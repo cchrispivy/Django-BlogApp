@@ -1,6 +1,6 @@
 # TEMP SETTINGS FOR TROUBLESHOOTING #
 from .common import *
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['blogapp-ivy.herokuapp.com']
 
-DEBUG = True
+DEBUG = False
