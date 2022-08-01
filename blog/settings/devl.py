@@ -2,4 +2,5 @@
 from blog.settings.common import *
 
 
+DEBUG = True
 
