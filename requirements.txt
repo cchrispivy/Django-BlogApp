@@ -68,7 +68,7 @@ pep8-naming==0.9.1
 Pillow==8.4.0
 platformdirs==2.4.0
 pluggy==1.0.0
-psycopg2==2.7.7
+psycopg2-binary==2.9.3
 py==1.11.0
 pycodestyle==2.7.0
 pycparser==2.21
