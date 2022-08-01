@@ -3,4 +3,4 @@ from .common import *
 
 ALLOWED_HOSTS = ['blogapp-ivy.herokuapp.com']
 
-DEBUG = False
+DEBUG = True
