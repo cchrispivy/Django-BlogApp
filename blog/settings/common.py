@@ -96,7 +96,7 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS = (
-    os.normpath(os.join(BASE_DIR, '..', 'static')),
+    os.path.normpath(os.path.join(BASE_DIR, '..', 'static')),
 )
 
 STATICFILES_FINDERS = (
@@ -114,5 +114,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'index'
 
 LOGIN_URL = 'login'
-
 
